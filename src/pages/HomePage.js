@@ -16,6 +16,7 @@ const HomePage = () => {
                     </Link>
                 </Banner>
             </Hero>
+            <Services />
         </div>
     )
 }
