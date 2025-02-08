@@ -17,5 +17,17 @@ const RoomPage = () => {
         </div>
     )
 }
+const RoomPage = () => (
+    <div>
+        <Hero hero={styles.roomsHero}>
+            <Banner title="our rooms">
+                <Link to="/" className="btn-primary">
+                    return home
+                </Link>
+            </Banner>
+        </Hero>
+    </div>
+);
 
 export default RoomPage
+export default RoomPage;
