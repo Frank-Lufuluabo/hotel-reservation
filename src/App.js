@@ -5,7 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
 import RoomPage from './pages/RoomPage';
-import SingleRoom from './pages/SingleRoom';
+import SingleRoom from './pages/singleRoom/SingleRoom';
 
 function App() {
   return (
