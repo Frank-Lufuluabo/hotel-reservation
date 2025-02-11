@@ -93,30 +93,60 @@ const filterRooms = () => {
   setSortedRooms(tempRooms);
 };
 
+setValues(prevState => ({
+  ...prevState,
+  sortedRooms: tempRooms,
+}));
+
+useEffect(() => {
+  const rooms = formatData(items);
+  const featuredRooms = rooms.filter(room => room.featured === true);
+
+  const maxPrice = Math.max(...rooms.map(item => item.price));
+  const maxSize = Math.max(...rooms.map(item => item.size));
+  const roomData = () => {
+    setValues(prevState => ({
+      ...prevState,
+      rooms,
+      featuredRooms,
+      sortedRooms: rooms,
+      loading: false,
+
+      price: maxPrice,
+      maxPrice,
+      maxSize,
+    }));
+  };
+  roomData();
+}, []);
+
+const getRooms = slug => {
+  const room = [...values.rooms].find(room => room.slug === slug);
+  return room;
+};
+
 const handleChange = event => {
   const { target } = event;
   const value = target.type === 'checkbox' ? target.checked : target.value;
   const { name } = target;
 
-  setValues(
-    {
-      [name]: value,
-    },
-    filterRooms,
-  );
+  setValues(prevState => ({
+    ...prevState,
+    [name]: value,
+  }));
 };
 
 
-  return (
+return (
 
-    <RoomContext.Provider value={{
-      rooms, featuredRooms, sortedRooms, loading, getRooms,
-      rooms, featuredRooms, sortedRooms, loading, getRooms, handleChange,
-    }}
-    >
-      {props.children}
-    </RoomContext.Provider>
-  );
+  <RoomContext.Provider value={{
+    rooms, featuredRooms, sortedRooms, loading, getRooms,
+    rooms, featuredRooms, sortedRooms, loading, getRooms, handleChange,
+  }}
+  >
+    {props.children}
+  </RoomContext.Provider>
+);
 
 RoomContextProvider.propTypes = {
   children: PropTypes.instanceOf(Array).isRequired,
