@@ -41,7 +41,7 @@
   .navLinks a:hover {
     color: var(--primaryColor);
   }
-
+  
   .showNav {
     height: 100px;
   }
