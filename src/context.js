@@ -3,6 +3,7 @@ import React, { createContext, useState } from 'react'
 import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import items from './data';
+import client from './Contentful';
 
 export const RoomContext = createContext();
 
