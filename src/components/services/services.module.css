@@ -2,7 +2,8 @@
     padding: 5rem 0;
   }
   .services {
-    background: var(--darkGrey);
+    background: black;
+    color: gainsboro;
     text-align: center;
   }
   .servicesCenter {
@@ -32,7 +33,7 @@
       max-width: 1170px;
     }
   }
-
+  
   @media screen and (min-width: 1200px) {
     .services p {
       width: 100%;

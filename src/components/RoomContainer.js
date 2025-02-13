@@ -5,16 +5,16 @@ import RoomFilter from './roomFilter/RoomFilter';
 import RoomList from './roomList/RoomList';
 
 const RoomContainer = () => {
-    const { loading, rooms, sortedRooms } = useContext(RoomContext);
-    if (loading) {
-        return <Loading />;
-    }
-    return (
-        <div>
-            <RoomFilter rooms={rooms} />
-            <RoomList rooms={sortedRooms} />
-        </div>
-    );
+  const { loading, rooms, sortedRooms } = useContext(RoomContext);
+  if (loading) {
+    return <Loading />;
+  }
+  return (
+    <div>
+      <RoomFilter rooms={rooms} />
+      <RoomList rooms={sortedRooms} />
+    </div>
+  );
 };
 
 export default RoomContainer;
